@@ -61,7 +61,19 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: [
-                            ['@babel/preset-env', { targets: "defaults" }]
+                            [
+                                '@babel/preset-env', 
+                                { 
+                                    targets: {
+                                        edge: 10,
+                                        firefox: 40,
+                                        chrome: 40,
+                                        safari: 8
+                                    },
+                                    useBuiltIns: 'entry',
+                                    corejs: 3
+                                }
+                            ]
                         ],
                         plugins: [
                             '@babel/plugin-proposal-optional-chaining',
@@ -78,7 +90,7 @@ module.exports = {
                     },
                     {
                         // Interprets `@import` and `url()` like `import/require()` and will resolve them
-                        loader: 'css-loader'
+                        loader: 'css-loader',                        
                     },
                     {
                         // Loader for webpack to process CSS with PostCSS
@@ -93,7 +105,12 @@ module.exports = {
                     },
                     {
                         // Loads a SASS/SCSS file and compiles it to CSS
-                        loader: 'sass-loader'
+                        loader: 'sass-loader',
+                        options: {
+                            sassOptions: {
+                                quietDeps: true // Suprime las advertencias de deprecación en las dependencias
+                            }
+                        }
                     }
                 ]
             }
