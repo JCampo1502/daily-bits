@@ -1,14 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap w/ Webpack</title>
-  </head>
-  <body>
-    <div class="container py-4 px-3 mx-auto">
-      <h1>Hello, Bootstrap and Webpack!</h1>
-      <button class="btn btn-primary">Primary button</button>
-    </div>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dally bits</title>
+</head>
+<body>
+    <main class="main main--account">
+        <div class="alert" role="alert">
+            <p class="alert__message"></p>
+        </div>
+        <picture class="main__logo">
+            <img class="main__icon" src="./assets/Logo.png" alt="logo">
+        </picture>
+        <h2 class="main__title">Iniciar Sesión</h2>
+        <section class="main__section main__section--account">
+            <article class="main__article main__article--google">
+                <button class="main__btn main__btn--google">
+                    <img class="main__icon main__icon--google" src="./assets/google-icon.png" alt="Google icon">
+                    Continuar con Google
+                </button>
+            </article>
+            <article class="main__article main__article--form">
+                <form class="form form--account">
+                    <div class="form__section">
+                        <label for="email" class="form__label">Correo electrónico</label>
+                        <input type="email" id="email" class="form__input" placeholder="Ingrese su correo electrónico">                        
+                    </div>
+                    <div class="form__section form__section--password">
+                        <label for="password" class="form__label">Contraseña</label>
+                        <input type="password" class="form__input" placeholder="Ingrese su contraseña" id="password">
+                    </div>
+                    <button class="form__submit" type="submit">Iniciar</button>
+                    <a href="#" class="form__link">¿Se te ólvido tu contraseña?</a>
+                    <button class="form__btn">¿Aún no tienes una cuenta? <em class="form__em">Inscribirse</em></button>
+                </form>
+            </article>
+        </section>
+    </main>
+</body>
 </html>

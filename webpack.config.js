@@ -31,10 +31,6 @@ module.exports = {
             template:'./src/pages/game.html',
             filename:'./pages/game.html'
         }),
-        new HtmlWebpackPlugin({
-            template:'./src/pages/account.html',
-            filename:'./pages/account.html'
-        }),
         new MiniCssExtractPlugin({filename: './styles/[name].[contenthash].css'}),
     ],
     module:{
@@ -112,6 +108,18 @@ module.exports = {
                             }
                         }
                     }
+                ]
+            },
+            {
+                test:/\.html$/,
+                use:[
+                    {
+                        loader:'html-loader',
+                        options: {
+                            minimize:true
+                        }
+                    }
+
                 ]
             }
         ]

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item nav__item--categories nav__item--active">                    
+                    <img class="nav__icon" src="./../assets/home-icon.svg" alt="home icon" class="nav__icon">
+                    <span class="nav__section">
+                        Home
+                    </span>                    
+                </li>
+                <li class="nav__item nav__item--statistics">                    
+                    <img class="nav__icon" src="./../assets/stadistics-icon.svg" alt="stadistics icon" class="nav__icon">
+                    <span class="nav__section">
+                        Estadísticas
+                    </span>                    
+                </li>
+                <li class="nav__item nav__item--profile">                    
+                    <img class="nav__icon" src="./../assets/profile-icon.svg" alt="profile icon" class="nav__icon">
+                    <span class="nav__section">
+                        Perfil
+                    </span>                    
+                </li>
+            </ul>
+        </nav>        
+    </header>
+    <main class="main main--categories">
+        <section class="main__section main__section--categories" >
+           
+            <h2 class="main__title">
+                Practica tus conocimientos en la categoría que prefieras.
+            </h2>
+            <article class="categories__container">
+                <ul class="list list--categories list--container">
+                    <li class="list__item list__item--category">
+                        <div class="list__progress">
+                            <img class="list__icon list__icon--category" src="./../assets/html-icon.svg" alt="html icon">
+                        </div>
+                        <strong class="list__description list__description--category">HTML</strong>
+                    </li>
+                    <li class="list__item list__item--category">
+                        <ul class="list list--categories">
+                            <li class="list__item list__item--category">
+                                <div class="list__progress">
+                                    <img class="list__icon list__icon--category" src="./../assets/css-icon.svg" alt="css icon">
+                                </div>
+                                <strong class="list__description list__description--category">CSS</strong>
+                            </li>
+                            <li class="list__item list__item--category">
+                                <div class="list__progress">
+                                    <img class="list__icon list__icon--category" src="./../assets/javascript-icon.svg" alt="javascript icon">
+                                </div>
+                                <strong class="list__description list__description--category">JS</strong>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list__item list__item--category">
+                        <ul class="list list--categories">
+                            <li class="list__item list__item--category">
+                                <div class="list__progress">
+                                    <img class="list__icon list__icon--category" src="./../assets/figma-icon.svg" alt="figma icon">
+                                </div>
+                                <strong class="list__description list__description--category">Figma</strong>
+                            </li>
+                            <li class="list__item list__item--category">
+                                <div class="list__progress">
+                                    <img class="list__icon list__icon--category" src="./../assets/ux-icon.svg" alt="javascript icon">
+                                </div>
+                                <strong class="list__description list__description--category">UX</strong>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <section class="main__section main__section--statistics" style="display: none;" >
+            <h2 class="main__title">
+                Estadísticas
+            </h2>
+            <article class="main__article">
+                
+                <form class="form form--statistics">
+                    <select name="numberOfDays" id="numberOfDays" class="form__days">
+                        <option value="7" selected>Los Últimos 7 dias</option>
+                        <option value="15">Los Últimos 15 dias</option>
+                        <option value="30">El Último mes</option>
+                    </select>
+                </form>
+                <ul class="list list--stadistics">
+                    <li class="list__item list__item--stadistic">
+                        Tiempo de estudio (horas)
+                        <strong class="list__description list__description--stadistic" id="hours">1</strong>
+                    </li>
+                    <li class="list__item list__item--stadistic">
+                        Respuestas contestadas
+                        <strong class="list__description list__description--stadistic" id="numberOfQuestions">40</strong>
+                    </li>
+                    <li class="list__item list__item--stadistic" >
+                        Respuestas correctas
+                        <strong class="list__description list__description--stadistic list__description--positive" id="rightAnswers">20</strong>
+                    </li>
+                    <li class="list__item list__item--stadistic">
+                        Respuestas incorrectas
+                        <strong class="list__description list__description--stadistic list__description--negative" id="wrongAnwers">20</strong>
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <section class="main__section main__section--profile" style="display: none;">
+            <h2 class="main__title">
+                Perfil
+            </h2>
+            <div class="profile__card">
+                <img class="profile__img" src="./../assets/profile-icon.svg" alt="profile icon">
+                <p class="profile__description">
+                    <strong class="profile__name">
+                        Javier Campo
+                    </strong>
+                    <em class="profile__email">
+                        campo.javier1502@gmail.com
+                    </em>
+                </p>
+                <button class="profile__close">Cerrar sesión</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main class="main">
+        <section class="main__section main__section--game">
+            <div class="status">
+                <span class="status__progress"></span>
+                <div class="status__lives">
+                    <img class="status__icon" src="./../assets/live-icon.svg" alt="live icon">
+                    4
+                </div>
+            </div>
+            <article class="main__article main__article--game">
+                <div class="panel">
+                    <img class="panel__character" src="./../assets/caracters-1.png" alt="character image">
+                    <p class="panel__description">
+                        ¿Qué etiqueta es semánticamente correcta para el contenido principal?
+                    </p>
+                </div>
+                <form class="form form--game">
+                    <div class="form__question">
+                        <label for="question-1">
+                            <input id="question-1" type="checkbox" class="form__input" name="question">
+                        </label>
+                        <label for="question-2">
+                            <input id="question-2" type="checkbox" class="form__input" name="question">
+                        </label>
+                        <label for="question-3">
+                            <input id="question-3" type="checkbox" class="form__input" name="question">
+                        </label>
+                    </div>
+                    <div class="form__message">
+                        <div class="form__onsuccess"></div>
+                        <div class="form__onwrong"></div>
+                        <button class="form__btn" type="submit">
+                            Comprobar
+                        </button>
+                    </div>
+                </form>
+            </article>
+            
+        </section>
+    </main>
+</body>
+</html>
