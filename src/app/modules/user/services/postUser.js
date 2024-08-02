@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
 import { userAxiosInstance } from "../../../constants";
-import { encryptPassword } from "../../../helpers/encryptPassword";
 import { sendEmail } from "../util/sendEmail";
 import { deleteUser } from "./deleteUser";
+import { encryptUserPassword } from "../../auth/encryptPassword";
 
 
 export const postUser =async ({
@@ -14,7 +14,7 @@ export const postUser =async ({
         const {data:user} = await userAxiosInstance.post('/',{
             id: uuidv4(),
             userName,
-            password:encryptPassword(password),
+            password:encryptUserPassword(password),
             email,
             correct:0,
             incorrect:0,
