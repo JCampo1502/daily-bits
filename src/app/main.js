@@ -8,17 +8,19 @@ const path = location.pathname;
 const localId = localStorage.getItem('user-id');
 const user = await getUserById(localId);
 
-switch (true) {
-    case path !== routes.Account && !user:
-        location.href = `..${loginPage}`;
-        break;
-    case path == routes.Account && user:
-        location.href = homePage;
-        break;
-    case path == routes.Account:
-        loadAccount();
-        break;
-    case path == routes.Home:
-        loadHome(user,loginPage);
-        break;
-}
+document.addEventListener('DOMContentLoaded',()=>{
+    switch (true) {
+        case path !== routes.Account && !user:
+            location.href = `..${loginPage}`;
+            break;
+        case path == routes.Account && user:
+            location.href = homePage;
+            break;
+        case path == routes.Account:
+            loadAccount();
+            break;
+        case path == routes.Home:
+            loadHome(user,loginPage);
+            break;
+    }
+})
