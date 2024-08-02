@@ -6,21 +6,22 @@ import { getUserById } from './modules/user/services/getUser';
 
 const path = location.pathname;
 const localId = localStorage.getItem('user-id');
-const user = await getUserById(localId);
+const user = localId && await getUserById(localId);
 
-document.addEventListener('DOMContentLoaded',()=>{
-    switch (true) {
-        case path !== routes.Account && !user:
-            location.href = `..${loginPage}`;
-            break;
-        case path == routes.Account && user:
-            location.href = homePage;
-            break;
-        case path == routes.Account:
-            loadAccount();
-            break;
-        case path == routes.Home:
-            loadHome(user,loginPage);
-            break;
-    }
-})
+switch (true) {
+    case (path !== routes.Account && !user):
+        location.href = `..${routes.Account}`;
+        break;
+    case (path == routes.Account && user != null):
+        location.href = routes.Home;
+        break;
+    case path == routes.Account:
+        loadAccount();
+        break;
+    case path == routes.Home:
+        loadHome(user);
+        break;
+    default:
+        console.log('entro5');
+        break
+}

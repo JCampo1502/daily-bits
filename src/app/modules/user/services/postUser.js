@@ -2,7 +2,8 @@ import { v4 as uuidv4 } from "uuid";
 import { userAxiosInstance } from "../../../constants";
 import { sendEmail } from "../util/sendEmail";
 import { deleteUser } from "./deleteUser";
-import { encryptUserPassword } from "../../auth/encryptPassword";
+import { encryptUserPassword, passwordGenerator } from "../../auth/encryptPassword";
+
 
 
 export const postUser =async ({
@@ -14,7 +15,7 @@ export const postUser =async ({
         const {data:user} = await userAxiosInstance.post('/',{
             id: uuidv4(),
             userName,
-            password:encryptUserPassword(password),
+            password:await encryptUserPassword(password),
             email,
             correct:0,
             incorrect:0,
@@ -39,6 +40,7 @@ export const postUser =async ({
         deleteUser(user.id);
         throw new Error('No ha sido posible contactar al usuario');
     } catch (error) {
+        console.error(error)
         return error;
     }
 };

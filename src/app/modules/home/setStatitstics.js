@@ -1,4 +1,6 @@
+import defaultImg from '../../../assets/profile-icon.svg'
 export const setStatistics  = (user)=>{
+    
     /* Set statistics */
     document.querySelector('#hours').textContent                = user.time;
     document.querySelector('#numberOfQuestions').textContent    = user.questions;
@@ -6,5 +8,5 @@ export const setStatistics  = (user)=>{
     document.querySelector('#wrongAnwers').textContent          = user.incorrect;
     document.querySelector('.profile__name').textContent        = user.userName;
     document.querySelector('.profile__email').textContent       = user.email
-    document.querySelector('.profile__img').setAttribute('src',user.img);
+    document.querySelector('.profile__img').setAttribute('src',user.img??defaultImg);
 }

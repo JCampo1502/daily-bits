@@ -7,7 +7,7 @@ export const switchHomeSection = ()=>{
     const sectionsElments        = document.querySelectorAll('.main__section');
     const btns                   = document.querySelectorAll('.header .nav__item');   
     const switchSections         = switchActiveSection(sectionsElments,btns)
-    
+        
     /* switch Active View */    
     switchSections(0,categoriesBtnsElements);
     switchSections(1,statisticsBtnsElements);

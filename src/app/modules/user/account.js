@@ -3,12 +3,11 @@ import { signUp } from "./signUp";
 
 export const loadAccount = ()=>{
     const alertElment = document.querySelector('.alert');
-    const submitBtnsElments = document.querySelector('.form__submit');
+    const submitBtnsElments = document.querySelectorAll('.form__submit');
     const logInFormElement = document.querySelector(".form--account");
     const signUpFormElment = document.querySelector('.form--register');
     const getLowerCaseValue = (element) => element.value.toLowerCase();
     const loadBtnsAndAlert = (fn)=>fn(alertElment,submitBtnsElments);
-
     loadBtnsAndAlert(logIn)(
         {
             logInFormElement,        

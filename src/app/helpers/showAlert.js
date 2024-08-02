@@ -1,8 +1,9 @@
-export const showAlert = (alertElement,btns)=>(message)=>{
+export const showAlert = (alertElement,btns = [])=>(message)=>{
     alertElement.innerHTML = `<p class="alert__message">${message}</p>`;
     alertElement.classList.remove('alert--show');
     alertElement.classList.add('alert--show');
-    btns.forEach(btn => {
+    btns?.forEach(btn => {
+        console.log(btn);
         btn.classList.add('disable');
         btn.setAttribute('disabled','');
     });

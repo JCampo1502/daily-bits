@@ -1,4 +1,5 @@
 import { switchSections } from "../../../helpers/switchSections";
+import { classRemover } from "../../../helpers/classRemover";
 
 export const switchActiveSection =(sectionsElments,btns)=> (i, element)=>{
     element.addEventListener('click',()=>{

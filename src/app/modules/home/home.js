@@ -4,5 +4,5 @@ import { switchHomeSection } from "./switchHomeSection";
 export const loadHome = (user)=>{
     setStatistics(user);
     switchHomeSection();
-    logOut();
+    logOut();    
 }

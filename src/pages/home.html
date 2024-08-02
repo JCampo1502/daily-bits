@@ -31,7 +31,7 @@
         </nav>        
     </header>
     <main class="main main--categories">
-        <section class="main__section main__section--categories" >
+        <section class="main__section main__section--categories" style="display: none;">
            
             <h2 class="main__title">
                 Practica tus conocimientos en la categoría que prefieras.
@@ -112,7 +112,7 @@
                 </ul>
             </article>
         </section>
-        <section class="main__section main__section--profile" style="display: none;">
+        <section class="main__section main__section--profile">
             <h2 class="main__title">
                 Perfil
             </h2>
@@ -126,9 +126,60 @@
                         campo.javier1502@gmail.com
                     </em>
                 </p>
-                <button class="profile__edit">Editar perfil</button>
-                <button class="profile__close">Cerrar sesión</button>
+                <button class="profile__edit" data-bs-toggle="modal" data-bs-target="#profile">Editar perfil</button>
+                <button class="profile__close">Cerrar sesión</button>                
             </div>
+            <article class="modal show" id="profile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="profileLabel"  aria-modal="true" style="display: block;">
+                <div class="modal-dialog">
+                    <form class="modal-content form form--profile">
+                        <div class="modal-header">                    
+                            <h1 class="modal-title" id="staticBackdropLabel">
+                                Edita tu usuario.
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">  
+                            <picture class="main__photo">
+                                <img class="main__icon" src="./../assets/profile-icon.svg" alt="foto de usuario">
+                            </picture>                
+                            <div class="form__section">
+                                <label for="profileImage" class="form__label">
+                                    Ingresa tu nueva imagen
+                                </label>
+                                <input type="url" id="profileImage" class="form__input" placeholder="Ingrese su nueva imagen de usuario (Opcional)">
+                            </div>
+                            <div class="form__section">
+                                <label for="profileUserName" class="form__label">
+                                    Nombre de Usuario
+                                </label>
+                                <input type="text" id="profileUserName" class="form__input" placeholder="Ingrese su nuevo nombre de usuario (Opcional)">
+                            </div>
+                      
+                            <div class="form__section">
+                                <label for="profileEmail" class="form__label">
+                                    Correo electrónico
+                                </label>
+                                <input type="email" id="profileEmail" class="form__input" placeholder="Ingrese su nuevo correo electrónico (Opcional)">
+                            </div>
+                            <div class="form__section">
+                                <label for="profileNewPassword" class="form__label">
+                                    Nueva Contraseña
+                                </label>
+                                <input type="password" id="profileNewPassword" class="form__input" placeholder="Ingrese su nueva contraseña (Opcional).">
+                            </div>
+                        </div>
+                        <div class="modal-footer">                    
+                            <div class="form__section form__section--required">
+                                <label for="profilePassword" class="form__label">
+                                    Contraseña Actual
+                                </label>
+                                <input type="password" id="profilePassword" class="form__input" placeholder="Ingrese su contraseña" required>
+                            </div>
+                            <button class="form__submit" type="submit">Registrar</button>
+                        </div>
+                    </form>
+                </div>
+            </article>
         </section>
     </main>
 </body>

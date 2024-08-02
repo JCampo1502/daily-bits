@@ -26,7 +26,7 @@ export const signUp = (alertElement,btnsElements)=>({
             }
             return;
         }
-        const message = postUser({
+        const message = await postUser({
             userName,
             email
         });

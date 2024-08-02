@@ -3,11 +3,12 @@ import { saveUser } from "./util/saveUser";
 import { showAlert } from "../../helpers/showAlert";
 
 export const logIn = (alertElement,btnsElements)=>({
-    loginFormElement,
+    logInFormElement,
     getPassword,
     getEmail
 })=>{
-    const alert = showAlert(alertElement,[btnsElements]);
+    console.log(btnsElements)
+    const alert = showAlert(alertElement,btnsElements);
 
     const loginUser = async e=>{
         e.preventDefault();  
@@ -30,5 +31,5 @@ export const logIn = (alertElement,btnsElements)=>({
         saveUser(id);    
     }
 
-    loginFormElement.addEventListener('submit',loginUser)        
+    logInFormElement.addEventListener('submit',loginUser)        
 }
