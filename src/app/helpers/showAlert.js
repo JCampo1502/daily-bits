@@ -1,4 +1,4 @@
-export const showAlert = (alertElement, message,btns)=>{
+export const showAlert = (alertElement,btns)=>(message)=>{
     alertElement.innerHTML = `<p class="alert__message">${message}</p>`;
     alertElement.classList.remove('alert--show');
     alertElement.classList.add('alert--show');

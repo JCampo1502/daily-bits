@@ -33,9 +33,48 @@
                     </div>
                     <button class="form__submit" type="submit">Iniciar</button>
                     <a href="#" class="form__link">¿Se te ólvido tu contraseña?</a>
-                    <button class="form__btn">¿Aún no tienes una cuenta? <em class="form__em">Inscribirse</em></button>
+                    <button class="form__btn" data-bs-toggle="modal" data-bs-target="#register" type="button">
+                      ¿Aún no tienes una cuenta? 
+                      <em class="form__em">Inscribirse</em>
+                    </button>
                 </form>
             </article>
+            <article class="modal" id="register" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerLabel"  aria-hidden="true">
+              <div class="modal-dialog">
+                <form class="modal-content form form--register">
+                  <div class="modal-header">                    
+                    <h1 class="modal-title" id="staticBackdropLabel">
+                      Registro de usuario
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">  
+                    <picture class="main__logo">
+                      <img class="main__icon" src="./assets/Logo.png" alt="logo">
+                    </picture>                
+                    <div class="form__section">
+                        <label for="registerUserName" class="form__label">
+                          Nombre de Usuario
+                        </label>
+                        <input type="text" id="registerUserName" class="form__input" placeholder="Ingrese su nombre de usuario" value="MIXtiko1502" required>
+                    </div>
+                    <div class="form__section">
+                        <label for="registerEmail" class="form__label">
+                          Correo electrónico
+                        </label>
+                        <input type="email" id="registerEmail" class="form__input" placeholder="Ingrese su correo electrónico" value="javierdavidcamposuarez15@gmail.com">
+                    </div>
+                    
+                  </div>
+                  <div class="modal-footer">                    
+                    <button class="form__submit" type="submit">Registrar</button>
+                  </div>
+                </form>
+              </div>
+            </article>
+            <article >
+              
+          </article>
         </section>
     </main>
 </body>

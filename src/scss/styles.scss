@@ -29,12 +29,40 @@ $icon-background: #873DEC;
 
 body{
     @extend .bg-black;
+    &::before{
+        @extend .position-fixed, .h-100, .w-100, .top-0, .bg-primary, .d-flex, .align-items-center, .justify-content-center;
+        content: url(./../assets/Logo.png);
+        transform: scale(1.2);
+        z-index: 1000;        
+        left: -150%;
+
+        animation-name: loadAnimation;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        animation-direction: alternate;
+        animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+    }
+
+    @keyframes loadAnimation {
+        0%{
+            left: -150%;            
+        }
+        5%{
+            left: 0%;            
+        }
+        80%{
+            left: 0%;
+        }
+        100%{
+            left: -150%;         
+        }
+    }
 }
 
 .header{
     @extend .navbar, .w-100, .position-fixed, .bottom-0, .start-0;
     background: $neutral;
-    z-index: 1600;
+    z-index: 500;
     .nav{
         @extend .w-100;
         &__list{
@@ -57,13 +85,14 @@ body{
     @extend .p-3, .pb-0, .position-relative;
     @extend .d-flex;
     @extend .flex-column;
-    @extend .align-items-center;
+    @extend .align-items-center;        
 
     
     &--account{
         .alert{
-            @extend .position-absolute, .w-100, .alert, .alert-danger, .fs-4, .text-center, .fw-bold, .start-0;
+            @extend .position-absolute, .w-100, .alert, .alert-warning, .fs-4, .text-center, .fw-bold, .start-0;
             top: -100%;
+            z-index: 1600;
             &--show{
                 animation-name: showAlert;
                 animation-duration: 2s;
@@ -109,45 +138,79 @@ body{
                 .main__btn--google{
                     @extend .btn, .btn-danger, .btn-lg, .text-white, .w-100, .mb-3;
                 }
-            }
+            }            
             .main__article--form{                
                 @extend .mt-4;
                 font-size: 1rem * 1.15;
+            }
+            
+            .form{
+                @extend .d-flex, .flex-column, .align-items-center;
+                letter-spacing: 1.15px;
+                .form__section{
+                    @extend .mb-3, .col-12;
+                    .form__label{
+                        @extend .d-flex, .flex-column, .form-label, .text-white, .fw-light, .ps-3;
+                        
+                    }
+                    .form__input{
+                        @extend .form-control, .rounded-1;
+                        height: 48px;
+                
+                    }                       
+                }
+                .form__submit{
+                    @extend .btn, .btn-primary, .col-12, .my-1, .fs-4;
+                }
+                
+                .form__btn{
+                    @extend .btn, .fst-normal, .text-white, .mt-4, .col-12, .px-0;
+                    font-size: 1rem * 1.15;
+
+                    .form__em{
+                        @extend .fst-normal;
+                    }
+                }
+
+                .form__link, .form__em{
+                    @extend .text-success;
+                }
+                .form__link{
+                    @extend .mt-2;
+                }
+
+            }
+            .modal{
+                @extend .fade, .text-white;
+
+                .btn-close{
+                    @extend .btn, .btn-warning, .rounded-pill;
+                    opacity: 1;
+                }
+                
+                &-dialog{
+                    @extend .modal-dialog-centered;
+                }
+                &-content{
+                    background: $neutral
+                }
+
+                &-title{
+                    @extend .fs-5;    
+                }
+                
                 .form{
-                    @extend .d-flex, .flex-column, .align-items-center;
-                    letter-spacing: 1.15px;
+                    @extend .align-items-stretch, .px-4, .py-2, .mt-5;
                     .form__section{
-                        @extend .mb-3, .col-12;
-                        .form__label{
-                            @extend .d-flex, .flex-column, .form-label, .text-white, .fw-light, .ps-3;
-                            
-                        }
-                        .form__input{
-                            @extend .form-control, .rounded-1;
-                            height: 48px;
-                    
-                        }                       
-                    }
-                    .form__submit{
-                        @extend .btn, .btn-primary, .col-12, .my-1, .fs-4;
-                    }
-                    
-                    .form__btn{
-                        @extend .btn, .fst-normal, .text-white, .mt-4, .col-12, .px-0;
-                        font-size: 1rem * 1.15;
-
-                        .form__em{
-                            @extend .fst-normal;
-                        }
+                        @extend .col-11;                        
                     }
 
-                    .form__link, .form__em{
-                        @extend .text-success;
+                    &__submit{
+                        @extend .bg-success, .border-0;
                     }
-                    .form__link{
-                        @extend .mt-2;
-                    }
-
+                }
+                &-body{
+                    @extend .d-flex, .align-items-center, .justify-content-center, .flex-wrap, .mt-2,.mb-3;
                 }
             }
         }
