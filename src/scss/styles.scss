@@ -113,6 +113,7 @@ body{
 
     .alert{
         @extend .position-absolute, .w-100, .alert, .alert-warning, .fs-4, .text-center, .fw-bold, .start-0;
+        height: max-content;
         top: -100%;
         z-index: 1600;
         &--show{
@@ -121,7 +122,33 @@ body{
             animation-iteration-count:1;
             animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
         }   
+        &--game{
+            @extend .border-0, .m-0, .rounded-0, .text-dark, .row;
+            background: $green-light !important;            
+            bottom: -13px;        
+            top: 85%;
+            .alert__message{
+                @extend .fs-6, .text-start, .m-0, .mb-2;
+            }
+            
+            .alert__btn{
+                @extend .btn, .btn-success, .col-12, .text-white, .fw-bold, .text-uppercase, .rounded-4;
+                height: 50px;
+            }
+        }
 
+        &--wrong{
+            
+            background: $red-light !important;
+            top: 80%;
+            .alert__message{
+                @extend .text-danger;
+            }
+
+            .alert__btn{
+                @extend .btn, .btn-danger;
+            }
+        }
     }
     
     &--account{
@@ -383,5 +410,102 @@ body{
         }
     }
 
-    
+    &--game{
+        @extend .container-sm;
+        .main__section{
+            @extend .position-relative;
+        }
+        .status{            
+            @extend .row, .px-3, .justify-content-end, .align-items-center, .mt-2, .mb-5;
+
+            .progress{
+                width: 70%;
+            }
+            .lives{
+                @extend .col-2, .text-white, .fs-5, .d-flex, .pe-0; 
+                &__icon{
+                    margin-right: .2rem;
+                }
+            }
+        }
+
+        .message{
+            @extend .text-white, .fs-4, .mb-4, .d-flex;
+            &__character{
+                @extend .me-3, .ms-2;
+                height: 159px;
+                width: 75px;
+                float: left;
+            }
+
+            &__description{
+                @extend .mt-3;
+            }
+        }
+        .form--game{
+            @extend .container;
+            .game{
+                @extend .row;
+                &--select{
+                    @extend .text-white, .fs-6, .justify-content-center, .pt-5;
+
+                    .form__label{
+                        @extend .col-12, .border, .border-3 , .border-white, .rounded-2, .mb-3, .px-3, .d-flex, .align-items-center, .justify-content-between;
+
+                        height: 60px;
+                        background: $neutral;
+
+                        &::after{
+                            content: url(./../assets/check-icon.svg);
+                            height: 24px;
+                            width: 24px;
+                            display: block;                            
+                        }
+                    }
+
+                    .form__input{
+                        @extend .d-none;
+                    }
+                    
+                    .form__input:checked + .form__label{
+                        @extend .border-success;
+                        &::after{
+                            content: url(./../assets/correct-icon.svg);
+                        }
+                    }
+                }
+
+                &--wrong{
+                    .form__input:checked + .form__label{
+                        @extend .border-danger;
+                        &::after{
+                            content: url(./../assets/incorrect-icon.svg);
+                        }
+                    }
+                }
+            }
+
+            .form__submit{
+                @extend .row, .pt-3;
+                .form__btn {
+                    @extend .btn, .btn-primary, .col-12, .rounded-4, .text-uppercase, .fw-bold;
+                    height: 50px;
+
+                    &:disabled{
+                        background: #D4CAF3;
+                        opacity: 1;
+                    }
+                }
+                .alert{                                        
+                    &--show{
+                        @extend .d-block;
+                    }
+
+                    &--hidden{
+                        @extend .d-none;
+                    }
+                }
+            }
+        }
+    }
 }
