@@ -64,7 +64,7 @@ body{
     background: $neutral;
     z-index: 500;
     .nav{
-        @extend .w-100;
+        @extend .container-sm;
         &__list{
             @extend .w-100, .d-flex, .justify-content-around, .align-items-center , .p-0, .m-0, .py-1;
             list-style: none            
@@ -73,6 +73,7 @@ body{
         &__item{
             @extend .d-flex, .flex-column, .align-items-center;            
             filter: invert(62%) sepia(67%) saturate(713%) hue-rotate(217deg) brightness(87%) contrast(101%); 
+            cursor: pointer;
 
             &--active{
                 filter: invert(49%) sepia(100%) saturate(329%) hue-rotate(103deg) brightness(100%) contrast(84%);
@@ -85,7 +86,8 @@ body{
     @extend .p-3, .pb-0, .position-relative;
     @extend .d-flex;
     @extend .flex-column;
-    @extend .align-items-center;        
+    @extend .align-items-center;  
+    @extend .container-sm;
 
     .modal{
         @extend .fade, .text-white;
@@ -244,6 +246,7 @@ body{
                         list-style: none;                
                         .list__item--category{
                             @extend .d-flex, .flex-column, .align-items-center , .text-secondary, .mx-3, .my-1;
+                            cursor: pointer;
         
                             .list__icon--category{                           
                                 box-sizing: content-box;                    
