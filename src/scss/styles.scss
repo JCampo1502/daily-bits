@@ -116,12 +116,6 @@ body{
         height: max-content;
         top: -100%;
         z-index: 1600;
-        &--show{
-            animation-name: showAlert;
-            animation-duration: 2s;
-            animation-iteration-count:1;
-            animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-        }   
         &--game{
             @extend .border-0, .m-0, .rounded-0, .text-dark, .row;
             background: $green-light !important;            
@@ -135,23 +129,22 @@ body{
                 @extend .btn, .btn-success, .col-12, .text-white, .fw-bold, .text-uppercase, .rounded-4;
                 height: 50px;
             }
-        }
-
-        &--wrong{
-            
-            background: $red-light !important;
-            top: 80%;
-            .alert__message{
-                @extend .text-danger;
-            }
-
-            .alert__btn{
-                @extend .btn, .btn-danger;
-            }
-        }
+        }        
     }
     
     &--account{
+        .alert{
+            @extend .position-absolute, .w-100, .alert, .alert-warning, .fs-4, .text-center, .fw-bold, .start-0;
+            height: max-content;
+            top: -100%;
+            z-index: 1600;
+            &--show{
+                animation-name: showAlert;
+                animation-duration: 2s;
+                animation-iteration-count:1;
+                animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            } 
+        }
         
         @keyframes showAlert {
             0%{
@@ -441,9 +434,31 @@ body{
             &__description{
                 @extend .mt-3;
             }
-        }
-        .form--game{
+        }   
+        
+        .form{
             @extend .container;
+            .form__submit{
+                @extend .row, .pt-3;
+                .form__btn {
+                    @extend .btn, .btn-primary, .col-12, .rounded-4, .text-uppercase, .fw-bold;
+                    height: 50px;
+
+                    &:disabled{
+                        background: #D4CAF3;
+                        opacity: 1;
+                    }
+                }
+                .alert{                                        
+                    &--show{
+                        @extend .d-block;
+                    }
+
+                    &--hidden{
+                        @extend .d-none;
+                    }
+                }
+            }
             .game{
                 @extend .row;
                 &--select{
@@ -473,37 +488,29 @@ body{
                             content: url(./../assets/correct-icon.svg);
                         }
                     }
-                }
+                }                
+            }
+        }                     
 
-                &--wrong{
-                    .form__input:checked + .form__label{
-                        @extend .border-danger;
-                        &::after{
-                            content: url(./../assets/incorrect-icon.svg);
-                        }
+        .form--wrong{
+            .game{
+                .form__input:checked + .form__label{
+                    @extend .border-danger;
+                    &::after{
+                        content: url(./../assets/incorrect-icon.svg);
                     }
                 }
             }
-
-            .form__submit{
-                @extend .row, .pt-3;
-                .form__btn {
-                    @extend .btn, .btn-primary, .col-12, .rounded-4, .text-uppercase, .fw-bold;
-                    height: 50px;
-
-                    &:disabled{
-                        background: #D4CAF3;
-                        opacity: 1;
-                    }
+            .alert{
+                background: $red-light !important;
+                top: 80%;
+                .alert__message{
+                    @extend .text-danger;
+                    min-height: 72px;
                 }
-                .alert{                                        
-                    &--show{
-                        @extend .d-block;
-                    }
-
-                    &--hidden{
-                        @extend .d-none;
-                    }
+    
+                .alert__btn{
+                    @extend .btn, .btn-danger;
                 }
             }
         }
