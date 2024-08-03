@@ -1,6 +1,7 @@
 import { userAxiosInstance} from "../../../constants";
 const getUserInfo = (user)=>{
-    return {        
+    return {
+        id:user.id,   
         userName : user.userName,
         email : user.email,
         correct : user.correct,

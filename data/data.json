@@ -1,14 +1,15 @@
 {
   "user": [
     {
-      "id": "d8f664f8-7760-4242-afed-5b6caaf01a45",
-      "userName": "mixtiko1502",
-      "password": "$2a$10$HUtjz6H3MC8CuzMCfY7fo.5getiM06Cxltxb1ZPYG9S38HK6FGCCO",
-      "email": "javierdavidcamposuarez15@gmail.com",
+      "id": "8c1cf86f-813d-49ff-b3b7-9dc6e2278beb",
+      "userName": "jcampo1502",
+      "password": "$2a$10$H.LNClFW1GbtatMwWzWF7uEOS2cZr7pIn6JEfrrseiRDrVoVIssjq",
+      "email": "campo.javier1502@gmail.com",
       "correct": 0,
       "incorrect": 0,
       "questions": 0,
-      "time": 0
+      "time": 0,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDUCeY41tjurMntRn_JvTZwqxtKgtBXwwWlA&s"
     }
   ],
   "questions": [

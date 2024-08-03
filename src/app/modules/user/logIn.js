@@ -7,7 +7,6 @@ export const logIn = (alertElement,btnsElements)=>({
     getPassword,
     getEmail
 })=>{
-    console.log(btnsElements)
     const alert = showAlert(alertElement,btnsElements);
 
     const loginUser = async e=>{

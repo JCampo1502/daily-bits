@@ -87,20 +87,42 @@ body{
     @extend .flex-column;
     @extend .align-items-center;        
 
+    .modal{
+        @extend .fade, .text-white;
+
+        .btn-close{
+            @extend .btn, .btn-warning, .rounded-pill;
+            opacity: 1;
+        }
+        
+        &-dialog{
+            @extend .modal-dialog-centered;
+        }
+        &-content{
+            @extend .border, .border-white;
+            background: $neutral
+        }
+
+        &-title{
+            @extend .fs-5;    
+        }
+        
+    }
+
+    .alert{
+        @extend .position-absolute, .w-100, .alert, .alert-warning, .fs-4, .text-center, .fw-bold, .start-0;
+        top: -100%;
+        z-index: 1600;
+        &--show{
+            animation-name: showAlert;
+            animation-duration: 2s;
+            animation-iteration-count:1;
+            animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }   
+
+    }
     
     &--account{
-        .alert{
-            @extend .position-absolute, .w-100, .alert, .alert-warning, .fs-4, .text-center, .fw-bold, .start-0;
-            top: -100%;
-            z-index: 1600;
-            &--show{
-                animation-name: showAlert;
-                animation-duration: 2s;
-                animation-iteration-count:1;
-                animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-            }   
-
-        }
         
         @keyframes showAlert {
             0%{
@@ -143,6 +165,22 @@ body{
                 @extend .mt-4;
                 font-size: 1rem * 1.15;
             }
+
+            .modal{
+                .form{
+                    @extend .align-items-stretch, .px-4, .py-2;
+                    .form__section{
+                        @extend .col-11;                        
+                    }
+        
+                    &__submit{
+                        @extend .bg-success, .border-0;
+                    }
+                }
+                &-body{
+                    @extend .d-flex, .align-items-center, .justify-content-center, .flex-wrap, .mt-2,.mb-3;
+                }
+            }
             
             .form{
                 @extend .d-flex, .flex-column, .align-items-center;
@@ -180,39 +218,6 @@ body{
                 }
 
             }
-            .modal{
-                @extend .fade, .text-white;
-
-                .btn-close{
-                    @extend .btn, .btn-warning, .rounded-pill;
-                    opacity: 1;
-                }
-                
-                &-dialog{
-                    @extend .modal-dialog-centered;
-                }
-                &-content{
-                    background: $neutral
-                }
-
-                &-title{
-                    @extend .fs-5;    
-                }
-                
-                .form{
-                    @extend .align-items-stretch, .px-4, .py-2, .mt-5;
-                    .form__section{
-                        @extend .col-11;                        
-                    }
-
-                    &__submit{
-                        @extend .bg-success, .border-0;
-                    }
-                }
-                &-body{
-                    @extend .d-flex, .align-items-center, .justify-content-center, .flex-wrap, .mt-2,.mb-3;
-                }
-            }
         }
     }
 
@@ -228,42 +233,41 @@ body{
                 .main__title{
                     @extend .fs-5, .text-center, .mt-3;  
                 }   
-          
-                  .categories__container{            
-          
-                      .list--container{
-                          @extend .d-flex, .flex-column, .align-items-center;
-                      }
-                      .list--categories{
-                          @extend .p-0, .d-flex;
-                          list-style: none;                
-                          .list__item--category{
-                              @extend .d-flex, .flex-column, .align-items-center , .text-secondary, .mx-3, .my-1;
-          
-                              .list__icon--category{                           
-                                  box-sizing: content-box;                    
-                                  height: 64px;
-                                  width: 64px;
-                                  border: 8px solid $black;
-                                  background: $black;
-                                  border-radius: 10rem;                        
-                              }
-          
-                              .list__description--category{
-                                  @extend .mt-2; 
-                                  @extend .fs-5;
-                              }
-          
-                              .list__progress{                        
-                                  @extend .bg-white, .rounded-pill;
-                                  padding: 1rem * .68;                        
-                              }
-                          }
-                      }
-          
-                  }
-            }
 
+                .categories__container{            
+        
+                    .list--container{
+                        @extend .d-flex, .flex-column, .align-items-center;
+                    }
+                    .list--categories{
+                        @extend .p-0, .d-flex;
+                        list-style: none;                
+                        .list__item--category{
+                            @extend .d-flex, .flex-column, .align-items-center , .text-secondary, .mx-3, .my-1;
+        
+                            .list__icon--category{                           
+                                box-sizing: content-box;                    
+                                height: 64px;
+                                width: 64px;
+                                border: 8px solid $black;
+                                background: $black;
+                                border-radius: 10rem;                        
+                            }
+        
+                            .list__description--category{
+                                @extend .mt-2; 
+                                @extend .fs-5;
+                            }
+        
+                            .list__progress{                        
+                                @extend .bg-white, .rounded-pill;
+                                padding: 1rem * .68;                        
+                            }
+                        }
+                    }
+        
+                }
+            }
 
             &--statistics{
                 @extend .w-100;
@@ -295,14 +299,71 @@ body{
             }
 
             &--profile{
+                .profile__img{
+                    @extend .border, .border-white, .rounded-pill;
+                    height: 80px;
+                    width: 80px;                        
+                    box-sizing: content-box;
+                }
+
+                .modal{
+                    &-content{                        
+                        @extend .container, .position-relative;
+                        
+                        .form__label{
+                            @extend .form-label;
+                        }
+                        .form__input{
+                            @extend .form-control, .rounded-1;
+                        }
+                    }
+                    &-body{
+                        @extend .row;
+                        .profile__img{
+                            @extend .p-0, .my-3, .mx-auto, .border-4;                            
+                        }
+                        .form__section {
+                            @extend .mb-3;                            
+
+                            @media (min-width:600px) {
+                                &--name, &--password{
+                                    width: 50% !important;
+                                }
+    
+                                &--image{
+                                    width: calc((100% / 12)*10) !important;
+                                }
+                            }
+                        }
+                        
+                    }
+                    &-footer{
+                        @extend .row, .align-items-end, .justify-content-between;
+                        .form__section {
+                            @extend .mb-3;
+                        }
+                        .form__submit{
+                            @extend .btn, .btn-success;
+                        }
+                        @media (min-width:600px) {
+                            .form__section{
+                                width: calc((100% / 12)*7) !important;
+                                margin-bottom: 0 !important;
+                            }
+
+                            .form__submit{
+                                width: calc((100% / 12)*4) !important;
+                            }
+                        }
+                        .form__input{
+                            @extend .border, .border-danger, .border-3;
+                        }
+                    }
+                }
+
                 .profile__card{
                     @extend .d-flex, .flex-column, .align-items-center;
-                    .profile__img{
-                        @extend .border, .border-white, .rounded-pill;
-                        height: 80px;
-                        width: 80px;                        
-                        box-sizing: content-box;
-                    }
+                    
     
                     .profile__description{
                         @extend .d-flex, .flex-column, .text-white, .text-center, .mt-2;
@@ -321,4 +382,3 @@ body{
 
     
 }
-

@@ -3,6 +3,7 @@ import { userAxiosInstance } from "../../../constants";
 import { sendEmail } from "../util/sendEmail";
 import { deleteUser } from "./deleteUser";
 import { encryptUserPassword, passwordGenerator } from "../../auth/encryptPassword";
+import { getUserByEmail } from "./getUser";
 
 
 
@@ -11,6 +12,11 @@ export const postUser =async ({
     email,    
 })=>{
     try {
+        if(await getUserByEmail(email))
+        {
+            throw new Error("El usuario ya se encuentra registrado.");
+            
+        }
         const password = passwordGenerator();
         const {data:user} = await userAxiosInstance.post('/',{
             id: uuidv4(),

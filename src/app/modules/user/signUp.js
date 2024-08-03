@@ -11,12 +11,12 @@ export const signUp = (alertElement,btnsElements)=>({
     const alert = showAlert(alertElement,btnsElements);
     const validateIfUserExist = async(email)=>await getUserByEmail(email)?false:true;
     const signUpUser = async e=>{
-        e.stopPropagation();
+        e.preventDefault();
         const email = getEmail();
         const userName = getUserName();        
-        if(!(email && userName && validateIfUserExist()))
+        if(!(email && userName && await validateIfUserExist(email)))
         {
-            if(email || userName)
+            if(!email || !userName)
             {
                 alert("Debe ingresar un valor en los campos.");
             }
@@ -31,6 +31,7 @@ export const signUp = (alertElement,btnsElements)=>({
             email
         });
         alert(message);
+        signUpFormElment.reset();
     }
     signUpFormElment.addEventListener('submit',signUpUser)   
 }
