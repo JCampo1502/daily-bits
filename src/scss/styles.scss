@@ -532,7 +532,8 @@ body{
                             @extend .d-flex, .flex-wrap, .border-bottom, .py-3;
                             border-color: $grey !important;
                             height: 40px;           
-                            box-sizing: content-box;                 
+                            box-sizing: content-box;      
+                            overflow-y: hidden;                      
                         }
                     }
 
@@ -557,6 +558,10 @@ body{
                             }
                             .em{
                                 @extend .text-danger, .fst-normal;
+                            }
+
+                            &--disabled{
+                                transform: translateY(100px);
                             }
                         }
 

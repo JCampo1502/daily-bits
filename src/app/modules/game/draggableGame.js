@@ -18,12 +18,15 @@ export const draggableGame = ()=>{
             pull:'clone',
             put:false
         },
+        filter:'.game__field--empty',
         animation:150,
         onClone: e=>{
             const origin = e.clone;
             const item = origin.querySelector('.game__value');            
-            item.style.transform = 'translateY(100px)';
-        }
+            item.classList.add('game__value--disabled');
+            origin.classList.add('game__field--empty')
+        },  
+        sort: false      
     }))    
 
     console.log(sortables);
