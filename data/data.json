@@ -20,9 +20,18 @@
           "tipo": 1,
           "question": "¿Qué etiqueta es semánticamente correcta para el contenido principal?",
           "options": [
-            "main",
-            "section",
-            "header"
+            {
+              "value":1,
+              "option":"main"
+            },
+            {
+              "value":2,
+              "option":"section"
+            },
+            {
+              "value":1,
+              "option":"header"
+            }
           ],
           "answer": 1
         },
@@ -30,9 +39,18 @@
           "tipo": 1,
           "question": "¿Qué etiqueta HTML nos sirve para incluir archivos de JavaScript?",
           "options": [
-            "<br>",
-            "<scritp>",
-            "<styles>"
+            {
+              "value":1,
+              "option":"<br>"
+            },
+            {
+              "value":2,
+              "option":"<scritp>"
+            },
+            {
+              "value":3,
+              "option":"<styles>"
+            }
           ],
           "answer": 2
         },
@@ -41,20 +59,24 @@
           "question": "Selecciona la imagen que representa el logo de HTML.",
           "options": [
             {
+              "value":1,
               "option": 1,
-              "url": "https://www.google.com/imgres?q=html&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F6%2F61%2FHTML5_logo_and_wordmark.svg&imgrefurl=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2FHTML&docid=A_2a1BbFnxMR_M&tbnid=O2LAft90i-2uhM&vet=12ahUKEwjdse-Dn9KHAxUtRDABHXuQA7MQM3oECBoQAA..i&w=800&h=800&hcb=2&ved=2ahUKEwjdse-Dn9KHAxUtRDABHXuQA7MQM3oECBoQAA"
+              "imgURL": "https://www.google.com/imgres?q=html&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F6%2F61%2FHTML5_logo_and_wordmark.svg&imgrefurl=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2FHTML&docid=A_2a1BbFnxMR_M&tbnid=O2LAft90i-2uhM&vet=12ahUKEwjdse-Dn9KHAxUtRDABHXuQA7MQM3oECBoQAA..i&w=800&h=800&hcb=2&ved=2ahUKEwjdse-Dn9KHAxUtRDABHXuQA7MQM3oECBoQAA"
             },
             {
+              "value":2,
               "option": 2,
-              "url": "https://www.google.com/imgres?q=html&imgurl=https%3A%2F%2Fode.educacion.es%2FINTEF%2Fes_2024040612_9162647%2FvistaPreviaAgrega.png&imgrefurl=https%3A%2F%2Fprocomun.intef.es%2Fode%2Fview%2Fes_2024040612_9162647&docid=wpnUjOEKLbXbqM&tbnid=WqQ-1nI-00TECM&vet=12ahUKEwjdse-Dn9KHAxUtRDABHXuQA7MQM3oECF0QAA..i&w=467&h=467&hcb=2&itg=1&ved=2ahUKEwjdse-Dn9KHAxUtRDABHXuQA7MQM3oECF0QAA"
+              "imgURL": "https://www.google.com/imgres?q=html&imgurl=https%3A%2F%2Fode.educacion.es%2FINTEF%2Fes_2024040612_9162647%2FvistaPreviaAgrega.png&imgrefurl=https%3A%2F%2Fprocomun.intef.es%2Fode%2Fview%2Fes_2024040612_9162647&docid=wpnUjOEKLbXbqM&tbnid=WqQ-1nI-00TECM&vet=12ahUKEwjdse-Dn9KHAxUtRDABHXuQA7MQM3oECF0QAA..i&w=467&h=467&hcb=2&itg=1&ved=2ahUKEwjdse-Dn9KHAxUtRDABHXuQA7MQM3oECF0QAA"
             },
             {
+              "value":3,
               "option": 3,
-              "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP9EWS4U27KhoOP8fCf-RXY_txM-5QQeRLCQ&s"
+              "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP9EWS4U27KhoOP8fCf-RXY_txM-5QQeRLCQ&s"
             },
             {
+              "value":4,
               "option": 4,
-              "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpJVDWvtRnLzTWuu9MUBT-Isp9XTmmS3x_qg&s"
+              "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpJVDWvtRnLzTWuu9MUBT-Isp9XTmmS3x_qg&s"
             }
           ],
           "answer": 1
@@ -64,20 +86,24 @@
           "question": "Selecciona la imagen que muestra un formulario HTML.",
           "options": [
             {
+              "value":1,
               "option": 1,
-              "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4AfkgA_2gq8J7j7oX5on9AEtcX7nKiqa0Pg&s"
+              "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4AfkgA_2gq8J7j7oX5on9AEtcX7nKiqa0Pg&s"
             },
             {
+              "value":2,
               "option": 2,
-              "url": "https://www.simplilearn.com/ice9/free_resources_article_thumb/user-registration-form.PNG"
+              "imgURL": "https://www.simplilearn.com/ice9/free_resources_article_thumb/user-registration-form.PNG"
             },
             {
+              "value":3,
               "option": 3,
-              "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSORwyW5xJ67pHJ1HqNvhbhTHcknIY0C9lIqQ&s"
+              "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSORwyW5xJ67pHJ1HqNvhbhTHcknIY0C9lIqQ&s"
             },
             {
+              "value":4,
               "option": 4,
-              "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXZk0xV40g8D69yZ8tRnsGZmsx-fP31krTcQ&s"
+              "imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXZk0xV40g8D69yZ8tRnsGZmsx-fP31krTcQ&s"
             }
           ],
           "answer": 2
@@ -142,10 +168,22 @@
           "tipo": 1,
           "question": "¿Qué propiedad se utiliza para cambiar el color de fondo en CSS?",
           "options": [
-            "background-image",
-            "background-color",
-            "padding",
-            "calc(1rem * 4px)"
+            {
+              "value":1,
+              "option":"background-image"
+            },
+            {
+              "value":2,
+              "option":"background-color"
+            },
+            {
+              "value":3,
+              "option":"padding"
+            },
+            {
+              "value":4,
+              "option":"calc(1rem * 4px)"
+            }            
           ],
           "answer": 2
         },
@@ -153,9 +191,18 @@
           "tipo": 1,
           "question": "¿Cómo se selecciona un elemento con el id 'header' en CSS?",
           "options": [
-            ".header",
-            "#header",
-            "header"
+            {
+              "value":1,
+              "option":".header"
+            },
+            {
+              "value":2,
+              "option":"#header"
+            },
+            {
+              "value":3,
+              "option":"header"
+            }
           ],
           "answer": 2
         },

@@ -9,6 +9,7 @@ export const emailParams = {
 
 export const routes = {
     Home    : '/pages/home.html',
+    Game    : '/pages/game.html',
     Account : '/',
 }
 

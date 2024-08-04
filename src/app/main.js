@@ -1,5 +1,6 @@
 import '../scss/styles.scss';
 import { routes } from './constants';
+import { loadGame } from './modules/game/game';
 import { loadHome } from './modules/home/home';
 import { loadAccount } from './modules/user/account';
 import { getUserById } from './modules/user/services/getUser';
@@ -21,7 +22,7 @@ switch (true) {
     case path == routes.Home:
         loadHome(user);
         break;
-    default:
-        console.log('entro5');
-        break
+    case path == routes.Game:
+        loadGame(user);
+        break;
 }

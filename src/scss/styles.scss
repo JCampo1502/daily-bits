@@ -14,7 +14,7 @@ $danger: #EF4565;
 $white: #FFFFFE;
 $black: #16161A;
 
-$gray: #94A1B2;
+$grey: #94A1B2;
 $tertiary:#72757E;
 
 $purple: #6B47DC;
@@ -409,7 +409,7 @@ body{
             @extend .position-relative;
         }
         .status{            
-            @extend .row, .px-3, .justify-content-end, .align-items-center, .mt-2, .mb-5;
+            @extend .row, .px-3, .justify-content-end, .align-items-center, .mt-2, .mb-3;
 
             .progress{
                 width: 70%;
@@ -423,17 +423,23 @@ body{
         }
 
         .message{
-            @extend .text-white, .fs-4, .mb-4, .d-flex;
-            &__character{
-                @extend .me-3, .ms-2;
-                height: 159px;
-                width: 75px;
-                float: left;
+            @extend .text-white, .fs-4, .mb-3, .d-flex;
+
+            &--selecction{
+                @extend .pt-4, .pb-5;
+                .message__character{
+                    @extend .me-3, .ms-2;
+                    height: 159px;
+                    width: 75px;
+                    float: left;
+                }
+    
+                .message__description{
+                    @extend .mt-3;
+                }
+
             }
 
-            &__description{
-                @extend .mt-3;
-            }
         }   
         
         .form{
@@ -461,7 +467,12 @@ body{
             }
             .game{
                 @extend .row;
-                &--select{
+
+                .form__input[type="radio"]{
+                    @extend .d-none;
+                }
+
+                &--selection{
                     @extend .text-white, .fs-6, .justify-content-center, .pt-5;
 
                     .form__label{
@@ -476,11 +487,7 @@ body{
                             width: 24px;
                             display: block;                            
                         }
-                    }
-
-                    .form__input{
-                        @extend .d-none;
-                    }
+                    }                    
                     
                     .form__input:checked + .form__label{
                         @extend .border-success;
@@ -488,16 +495,90 @@ body{
                             content: url(./../assets/correct-icon.svg);
                         }
                     }
-                }                
+                }
+
+                &--picture{
+                    display: grid;
+                    grid-auto-rows: 200px;
+                    grid-template-columns: 144px 144px;
+                    gap: .5rem;
+                    margin: auto;                    
+                    .form__label{
+                        @extend .border, .rounded-2, .text-white, .p-3, .pb-0, .d-flex, .flex-column, .justify-content-between, .align-items-center;
+                        border-width: 2px !important;
+                        border-bottom-width:4px !important;
+                        border-color: $grey !important;
+
+                        .game__picture{
+                            height: 128px;                            
+                        }
+
+                        .form__option{
+                            height: 24px;
+                        }
+                    }
+
+                    .form__input:checked + .form__label{
+                        @extend .border-success;
+                    }
+                }
+
+                &--sorting{
+                    @extend .row;
+                    .game__board{
+                        @extend .col-12, .mb-5;
+                        min-height: 146px;
+                        .game__section{
+                            @extend .d-flex, .flex-wrap, .border-bottom, .py-3;
+                            border-color: $grey !important;
+                            height: 40px;           
+                            box-sizing: content-box;                 
+                        }
+                    }
+
+                    .game__draggable {
+                        @extend .d-flex, .flex-wrap;
+                        
+                    }
+                    .game__field{
+                        @extend .rounded-4;                            
+                        height: 40px;
+                        margin-right: .5rem;
+                        background: $tertiary;
+                        overflow-y: hidden;
+                        .game__value{
+                            @extend .text-success, .bg-black, .d-inline-block, .rounded-4, .border, .border-1, .p-2, .d-flex, .align-items-center;
+                            cursor: grab;
+                            height: 40px;
+                            border-bottom-width:3px !important;
+                            border-color: $grey !important;
+                            .symbol{
+                                @extend .text-white;
+                            }
+                            .em{
+                                @extend .text-danger, .fst-normal;
+                            }
+                        }
+
+                    }
+                }
             }
         }                     
 
         .form--wrong{
             .game{
-                .form__input:checked + .form__label{
-                    @extend .border-danger;
-                    &::after{
-                        content: url(./../assets/incorrect-icon.svg);
+                &--selection{
+                    .form__input:checked + .form__label{
+                        @extend .border-danger;
+                        &::after{
+                            content: url(./../assets/incorrect-icon.svg);
+                        }
+                    }
+                }
+
+                &--picture{
+                    .form__input:checked + .form__label{
+                        @extend .border-danger;                     
                     }
                 }
             }

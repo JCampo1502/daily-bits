@@ -18,34 +18,67 @@
                         <span class="lives__count">4</span>
                     </div>
                 </div>
-                <p class="message">
-                    <img class="message__character" src="./../assets/caracters-1.png" alt="character">
+                <p class="message message--picture">                    
                     <span class="message__description">
-                        ¿Qué etiqueta es semánticamente correcta para el contenido principal?
+                        Organiza la estructura de un documento HTML5
                     </span>
                 </p>
             </article>
             <article class="main__article main__article--game ">
                 <form class="form"><!-- form--wrong //modo error -->
-                    <div class="game game--select">
-                        
-                        <input type="radio" name="select" id="select-1" value="main" class="form__input">
-                        <label for="select-1" class="form__label form__label">
-                            <span class="form__option">main</span>
-                        </label>
-                        
-                        <input type="radio" name="select" id="select-2" value="section" class="form__input">
-                        <label for="select-2" class="form__label">
-                            <span class="form__option">section</span>
-                        </label>
-                        
-                        <input type="radio" name="select" id="select-3" value="header" class="form__input">
-                        <label for="select-3" class="form__label">
-                            <span class="form__option">header</span>
-                        </label>
+                    <div class="game game--sorting">
+                        <div class="game__board">
+                            <div class="game__section"></div>
+                            <div class="game__section"></div>
+                            <div class="game__section"></div>
+                        </div>
+                        <div class="game__draggable">
+                            <p class="game__field">
+                                <strong class="game__value">
+                                    <span class="symbol">&lt;</span>
+                                        <em class="em">!DOCTYPE</em>&nbsp;html 
+                                    <span class="symbol">&gt;</span>
+                                </strong>
+                            </p>
+                            <p class="game__field">
+                                <strong class="game__value">
+                                    <span class="symbol">&lt;</span>
+                                        <em class="em">body</em>
+                                    <span class="symbol">&gt;</span>&nbsp;
+                                    <span class="symbol">&lt;</span>
+                                        <em class="em">/body</em>
+                                    <span class="symbol">&gt;</span>
+                                </strong>
+                            </p>                                
+                            <p class="game__field">
+                                <strong class="game__value">
+                                    <span class="symbol">&lt;</span>
+                                        <em class="em">head</em>
+                                    <span class="symbol">&gt;</span>&nbsp;
+                                    <span class="symbol">&lt;</span>
+                                        <em class="em">/head</em>
+                                    <span class="symbol">&gt;</span>
+                                </strong>
+                            </p>                                
+                            <p class="game__field">
+                                <strong class="game__value">
+                                    <span class="symbol">&lt;</span>
+                                        <em class="em">html</em>
+                                    <span class="symbol">&gt;</span>
+                                </strong>
+                            </p>                                
+                            <p class="game__field">
+                                <span class="game__value">
+                                    <span class="symbol">&lt;</span>
+                                        <em class="em">/html</em>
+                                    <span class="symbol">&gt;</span>
+                                </span>
+                            </p>
+                        </div>
                     </div>
                     <div class="form__submit">
-                        <div class="alert alert--show alert--game" role="alert">
+                        <!-- alert--show && alert--hidden -->
+                        <div class="alert alert--hidden alert--game" role="alert">
                             <p class="alert__message">
                                 ¡Buen trabajo!
                             </p>
