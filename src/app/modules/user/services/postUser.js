@@ -26,7 +26,8 @@ export const postUser =async ({
             correct:0,
             incorrect:0,
             questions:0,
-            time:0
+            time:0,
+            game:{}
         })
         
         if(!user)

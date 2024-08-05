@@ -1,14 +1,15 @@
 import { userAxiosInstance} from "../../../constants";
 const getUserInfo = (user)=>{
     return {
-        id:user.id,   
-        userName : user.userName,
-        email : user.email,
-        correct : user.correct,
-        incorrect : user.incorrect,
-        questions : user.questions,
-        time : user.time,
-        img : user.img ?? null,
+        id          : user.id,   
+        userName    : user.userName,
+        email       : user.email,
+        correct     : user.correct,
+        incorrect   : user.incorrect,
+        questions   : user.questions,
+        time        : user.time,
+        img         : user.img ?? null,
+        game        : user.game
     }
 }
 

@@ -5,8 +5,9 @@ export const switchHomeSection = ()=>{
     const statisticsBtnsElements = document.querySelector('.nav__item--statistics');
     const profileBtnsElments     = document.querySelector('.nav__item--profile');
     const sectionsElments        = document.querySelectorAll('.main__section');
-    const btns                   = document.querySelectorAll('.header .nav__item');   
-    const switchSections         = switchActiveSection(sectionsElments,btns)
+    const btns                   = document.querySelectorAll('.header .nav__item');
+    const categoriesContainer    = document.querySelector('.categories__container');
+    const switchSections         = switchActiveSection(sectionsElments,btns);
         
     /* switch Active View */    
     switchSections(0,categoriesBtnsElements);

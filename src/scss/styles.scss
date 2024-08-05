@@ -27,6 +27,10 @@ $icon-background: #873DEC;
 
 @import "~bootstrap/scss/bootstrap";
 
+*{
+    user-select: none;
+}
+
 body{
     @extend .bg-black;
     &::before{
@@ -265,8 +269,13 @@ body{
                         @extend .p-0, .d-flex;
                         list-style: none;                
                         .list__item--category{
-                            @extend .d-flex, .flex-column, .align-items-center , .text-secondary, .mx-3, .my-1;
+                            @extend  .mx-3, .my-1;
                             cursor: pointer;
+                            
+                            .list__link{
+                                @extend .d-flex, .flex-column, .align-items-center, .text-secondary;
+                                text-decoration: none;
+                            }
         
                             .list__icon--category{                           
                                 box-sizing: content-box;                    
@@ -412,7 +421,12 @@ body{
             @extend .row, .px-3, .justify-content-end, .align-items-center, .mt-2, .mb-3;
 
             .progress{
+                @extend .p-0;
                 width: 70%;
+
+                .progress-bar{
+                    @extend .bg-success;
+                }
             }
             .lives{
                 @extend .col-2, .text-white, .fs-5, .d-flex, .pe-0; 
@@ -497,10 +511,11 @@ body{
                     }
                 }
 
-                &--picture{
+                &--picture{                    
                     display: grid;
                     grid-auto-rows: 200px;
                     grid-template-columns: 144px 144px;
+                    justify-content: center;
                     gap: .5rem;
                     margin: auto;                    
                     .form__label{
@@ -510,7 +525,8 @@ body{
                         border-color: $grey !important;
 
                         .game__picture{
-                            height: 128px;                            
+                            height: 128px;   
+                            max-width: 100%;                         
                         }
 
                         .form__option{
@@ -531,7 +547,7 @@ body{
                         .game__section{
                             @extend .d-flex, .flex-wrap, .border-bottom, .py-3;
                             border-color: $grey !important;
-                            height: 40px;           
+                            min-height: 40px;           
                             box-sizing: content-box;      
                             overflow-y: hidden;                      
                         }
@@ -557,7 +573,7 @@ body{
                                 @extend .text-white;
                             }
                             .em{
-                                @extend .text-danger, .fst-normal;
+                                @extend .text-danger, .fst-normal, .px-1;
                             }
 
                             &--disabled{

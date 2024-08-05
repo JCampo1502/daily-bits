@@ -1,11 +1,19 @@
 import defaultImg from '../../../assets/profile-icon.svg'
 export const setStatistics  = (user)=>{
+    let totalQuestions = 0;
+    let totalCorrects = 0;
+    let totalHours = 0;
     
+    for (const {correct,hours,total} of Object.values(user.game)) {
+        totalQuestions  += total;
+        totalCorrects   += correct;
+        totalHours      += parseFloat(hours);
+    }
     /* Set statistics */
-    document.querySelector('#hours').textContent                = user.time;
-    document.querySelector('#numberOfQuestions').textContent    = user.questions;
-    document.querySelector('#rightAnswers').textContent         = user.correct;
-    document.querySelector('#wrongAnwers').textContent          = user.incorrect;
+    document.querySelector('#hours').textContent                = totalHours;
+    document.querySelector('#numberOfQuestions').textContent    = totalQuestions;
+    document.querySelector('#rightAnswers').textContent         = totalCorrects;
+    document.querySelector('#wrongAnwers').textContent          = totalQuestions - totalCorrects;
     document.querySelector('.profile__name').textContent        = user.userName;
     document.querySelector('.profile__email').textContent       = user.email
     document.querySelector('.profile__img').setAttribute('src',user.img??defaultImg);

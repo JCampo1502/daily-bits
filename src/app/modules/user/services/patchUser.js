@@ -10,7 +10,8 @@ const keys = [
     'userName',
     'password',
     'email',
-    'img'
+    'img',
+    'game'
 ]
 
 const getData = async(userData = {})=>{
@@ -46,8 +47,7 @@ export const patchUser = async(id,data)=>{
         {
             throw new Error('No se logro actualizar al usuario')
         }
-
-        console.log(user);
+        
         return {
             status:'OK',
             message:`Cambios guardados con exito.`
