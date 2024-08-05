@@ -18,7 +18,7 @@ export const startGame  = (category,user)=>{
     const questionsLen          = savedGame.questions.length;
     const progress              = (100/questionsLen)*index;
 
-    if(index >= savedGame.questionsLen - 1)
+    if(index >= savedGame.questionsLen - 1 || lives<=0)
     {        
         location.href=routes.Home;
         removeSavedGame(category);
@@ -60,7 +60,9 @@ export const startGame  = (category,user)=>{
 
     checkBtnElment.addEventListener('click',()=>{        
         alertElement.classList.remove('alert--hidden');
-        alertElement.classList.add('alert--show');        
+        alertElement.classList.add('alert--show');   
+        savedGame.currentQuestionIndex++;
+        savedGame.timeFinal = new Date();     
 
         if(validate(correctOption??answer))
         {            
@@ -75,10 +77,10 @@ export const startGame  = (category,user)=>{
                 ${escapeCharacters(correctOption?.option??answer)}
             `;
             savedGame.incorrect++;
+            if (savedGame.incorrect >= 4) {
+                alert('Te quedaste sin vidas.')
+            }
         }
-        
-        savedGame.currentQuestionIndex++;
-        savedGame.timeFinal = new Date();
         
         setNewSave(category,savedGame);
     })

@@ -1,4 +1,5 @@
 import defaultImg from '../../../assets/profile-icon.svg'
+import { loadLinks } from './loadLinks';
 export const setStatistics  = (user)=>{
     let totalQuestions = 0;
     let totalCorrects = 0;
@@ -9,6 +10,9 @@ export const setStatistics  = (user)=>{
         totalCorrects   += correct;
         totalHours      += parseFloat(hours);
     }
+
+    loadLinks(user);
+
     /* Set statistics */
     document.querySelector('#hours').textContent                = totalHours;
     document.querySelector('#numberOfQuestions').textContent    = totalQuestions;
