@@ -415,7 +415,19 @@ body{
             width: fit-content;
             height: fit-content;
             position: relative;
-            z-index: 1;
+            z-index: 1;    
+            
+            &::before{
+                content: '';
+                position: absolute;
+                background: $white;
+                width: 96px;
+                height: 96px;
+                z-index: -10;
+                left: 0;
+                top: 0;
+                border-radius: 50%;
+            }
 
             .skill{
                 display: block;
@@ -443,12 +455,10 @@ body{
                         }
                     }
                 }
+            }            
 
-            }
-
-            
             svg{
-                transform: rotate(115deg);
+                transform: rotate(115deg);                                
             }
                         
             circle{
@@ -458,19 +468,22 @@ body{
                 stroke-dasharray: 450;
                 z-index: 15;
             }
+        }
 
-            .svg__complete{
-                position: absolute;
-                top: 0;
-                left: 0;
-                z-index:-1;
-
-                circle{                 
-                    stroke: $white;                 
+        .profile__user{
+            position: relative;
+            .profile__edit{
+                @extend .btn, .btn-light;
+                position: absolute;                
+                top: -30px;
+                right: -60px;
+                .edit__icon{
+                    height: 24px;
+                    width: 24px;
+                    background: none;
                 }
             }
         }
-
     }
 
     &--game{

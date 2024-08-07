@@ -30,6 +30,7 @@ export const signUp = (alertElement,btnsElements)=>({
             userName,
             email
         });
+        console.log(message);
         alert(message);
         signUpFormElment.reset();
     }

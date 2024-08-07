@@ -117,7 +117,13 @@
                 Perfil
             </h2>
             <div class="profile__card">
-                <img class="profile__img" src="./../assets/profile-icon.svg" alt="profile icon">
+                <div class="profile__user">
+                    <img class="profile__img" src="./../assets/profile-icon.svg" alt="profile icon">
+                    <button class="profile__edit" data-bs-toggle="modal" data-bs-target="#profile">
+                        <img class="edit__icon" src="./../assets/edit-icon.svg" alt="Edit icon">
+                    </button>
+                </div>
+
                 <p class="profile__description">
                     <strong class="profile__name">
                         Javier Campo
@@ -125,8 +131,7 @@
                     <em class="profile__email">
                         campo.javier1502@gmail.com
                     </em>
-                </p>
-                <button class="profile__edit" data-bs-toggle="modal" data-bs-target="#profile">Editar perfil</button>
+                </p>               
                 <button class="profile__close">Cerrar sesión</button>                
             </div>
             <article class="modal" id="profile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="profileLabel"  aria-hidden="true">

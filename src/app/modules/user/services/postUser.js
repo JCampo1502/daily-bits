@@ -35,6 +35,11 @@ export const postUser =async ({
             throw new Error('no fue posible registrar el usuario');
         }
 
+        console.log(
+            email,
+            password,
+            userName
+        );
         const response =await sendEmail({
             email,
             password:password,
