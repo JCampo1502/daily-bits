@@ -1,5 +1,13 @@
 # 🚀 Dealy Bits Project
 
+##📝 Introducción
+Dealy Bits es una aplicación interactiva diseñada para ayudar a los desarrolladores a mejorar sus habilidades en HTML, CSS y JavaScript de una manera dinámica y entretenida. A través de diversos juegos y desafíos, los usuarios podrán poner a prueba sus conocimientos, reforzar conceptos clave y monitorear su progreso en tiempo real.
+
+El proyecto busca ofrecer una experiencia atractiva mediante una interfaz gráfica bien estructurada y accesible, asegurando una navegación intuitiva y adaptada tanto para escritorio como para tablet. Además, incorpora funcionalidades como selección de categorías, preguntas dinámicas, sistema de vidas, estadísticas de desempeño y gestión de perfiles de usuario.
+
+Con un enfoque en el aprendizaje práctico, Dealy Bits motiva a los desarrolladores a mejorar sus habilidades de manera progresiva, desafiando sus conocimientos con preguntas aleatorias y distintos tipos de ejercicios interactivos.
+
+
 ## 📋 Consideraciones Técnicas
 
 ### 🎨 Diseño e Interfaz Gráfica
